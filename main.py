@@ -36,8 +36,15 @@ def print_history(turn_number):
 		print()
 		# print slot[j].reward_history[i] if exists else blank
 
-	# for i in range(n_slots):
-	# 	print(history[i], "\t\t", end='')
+	for i in range(n_slots-1):
+		print("================", end='')
+	print("======")
+	for i in range(n_slots):
+		print(history[i], "\t\t", end='')
+	print()
+	for i in range(n_slots-1):
+		print("================", end='')
+	print("======")
 
 for i in range(n_turns):
 	x = int(input("Which slot machine do you want to play?")) - 1
@@ -57,4 +64,4 @@ for i in range(n_turns):
 
 print("Your Total Reward is",total_reward)
 # print("Your Expected Reward was", total_expected_reward)
-print("The Best Arm to Play would be", np.argmax(probs)+1)
+print("The Best Arm to Play would have been", np.argmax(probs)+1)
